@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Movie List - My Favorite Movies{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">My Favorite Movies</h1>
+
+    {% if peliculas %}
+        <div class="list-group">
+            {% for pelicula in peliculas %}
+                <a href="{{ url_for('detalle_pelicula', pelicula_id=pelicula.id) }}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ pelicula.titulo }}</h5>
+                        <small>{{ pelicula.anio }}</small>
+                    </div>
+                    <p class="mb-1">Directed by: {{ pelicula.director }}</p>
+                    <small>Genre: {{ pelicula.genero }}</small>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No movies to show</p>
+    {% endif %}
+{% endblock %}

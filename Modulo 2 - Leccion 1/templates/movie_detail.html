@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ pelicula.titulo }} - My Favorite Movies{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h2>{{ pelicula.titulo }}</h2>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Director: {{ pelicula.director }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Year: {{ pelicula.year }} | Genre: {{ pelicula.genero }}</h6>
+            <p class="card-text"><strong>Summary:</strong> {{ pelicula.sinopsis }}</p>
+            <a href="{{ url_for('index') }}" class="btn btn-primary">&laquo; Return to List</a>
+        </div>
+    </div>
+{% endblock %}

@@ -5,9 +5,9 @@ app = Flask(__name__)
 # Ruta GET /info
 @app.route('/info', methods=['GET'])
 def get_info():
-    """
-    Endpoint para obtener información básica de la aplicación.
-    """
+    
+    #Endpoint para obtener información básica de la aplicación.
+    
     app_info = {
         "nombre_app": "Servidor de Actividad",
         "descripcion": "Servidor de Flask ."

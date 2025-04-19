@@ -1,0 +1,20 @@
+{
+    "usuarios": [
+      {
+        "idUsuario": "user-001",
+        "nombre": "Nombre Apellido",
+        "correo": "usuario@ejemplo.com"
+      }
+    ],
+    
+    "productos": [
+      {
+        "idProducto": "prod-001",
+        "nombre": "Nombre del Producto",
+        "precio": 0.00,
+        "categoria": "Categoría Principal",
+        "UPC":1111111111,
+        "stock": 0
+      }
+    ]
+  }

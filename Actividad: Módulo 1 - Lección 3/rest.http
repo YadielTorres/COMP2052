@@ -1,0 +1,45 @@
+
+### Prueba 1: Obtener información del sistema
+GET http://127.0.0.1:5000/info
+
+
+### Prueba 2: Obtener lista de usuarios
+GET http://127.0.0.1:5000/usuarios
+
+
+### Prueba 3: Crear usuario
+POST http://127.0.0.1:5000/crear_usuario
+Content-Type: application/json
+
+{
+    "nombre": "Ana Lopez",
+    "correo": "ana.lopez@correo.test"
+}
+
+
+### Prueba 4: Crear usuario 2
+POST http://127.0.0.1:5000/crear_usuario
+Content-Type: application/json
+
+{
+    "nombre": "Pedro Gil",
+    "correo": "pedro.gil@example.com"
+}
+
+### Prueba 5: Intentar crear usuario con datos incompletos (Error)
+POST http://127.0.0.1:5000/crear_usuario
+Content-Type: application/json
+
+{
+    "nombre": "Usuario Incompleto"
+}
+
+
+### Prueba 6: Intentar crear usuario con correo vacio (Error)
+POST http://127.0.0.1:5000/crear_usuario
+Content-Type: application/json
+
+{
+    "nombre": "Correo Vacío",
+    "correo": "  "
+}

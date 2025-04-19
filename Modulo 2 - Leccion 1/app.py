@@ -3,7 +3,7 @@ from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
-# Lista de diccionarios, cada uno representando una película
+# Lista de diccionarios, cada uno representando una pelicula
 peliculas_favoritas = [
     {
         'id': 1,
@@ -39,12 +39,12 @@ peliculas_favoritas = [
      }
 ]
 
-# Ruta principal: Muestra la lista de todas las películas
+# Ruta principal: Muestra la lista de todas las peliculas
 @app.route('/')
 def index():
     return render_template('index.html', peliculas=peliculas_favoritas)
 
-# Ruta para detalles: Muestra los detalles de una película específica por su ID
+# Ruta para detalles: Muestra los detalles de una pelicula especifica por su ID
 @app.route('/pelicula/<int:pelicula_id>')
 def detalle_pelicula(pelicula_id):
     pelicula_encontrada = None
@@ -56,8 +56,8 @@ def detalle_pelicula(pelicula_id):
     if pelicula_encontrada is None:
         abort(404, description=f"Película con ID {pelicula_id} no encontrada") # Abortar con error 404
 
-    # Si la encontramos, pasamos el diccionario de esa película a la plantilla
+    # Si se encuentra, pasamos el diccionario de esa pelicula a la plantilla
     return render_template('movie_detail.html', pelicula=pelicula_encontrada)
 
 if __name__ == '__main__':
-    app.run(debug=True) # Ejecutar en modo debug para desarrollo
+    app.run()

@@ -32,7 +32,7 @@ def post_mensaje():
     else:
         # Si 'mensaje' no se encuentra o no hay datos JSON, devolver un error
         error_respuesta = {
-            "error": "Formato de inválido o falta la clave 'mensaje'.",
+            "error": "Formato de invalido o falta la clave 'mensaje'.",
         }
         # Devolver la respuesta de error y el código de estado 400 (Bad Request)
         return jsonify(error_respuesta)

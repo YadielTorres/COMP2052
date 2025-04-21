@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+  <h1>Aplicacion proyecto</h1>
+  <p>Modulo 3- Leccion 2</p>
+  {% if not current_user.is_authenticated %}
+  <p><a href="{{ url_for('login') }}">Inicia sesion</a> para acceder al contenido protegido.</p>
+  {% endif %}
+{% endblock %}

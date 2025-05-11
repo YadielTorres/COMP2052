@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil de Usuario{% endblock %}
+
+{% block content %}
+    <h2>Perfil de {{ user.username }}</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Detalles del Usuario</h5>
+            <p class="card-text"><strong>ID de Usuario:</strong> {{ user.id }}</p>
+            <p class="card-text"><strong>Nombre de Usuario:</strong> {{ user.username }}</p>
+            <p class="card-text"><strong>Rol:</strong> {{ user.role }}</p>
+            </div>
+    </div>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-secondary mt-3">Volver al Dashboard</a>
+{% endblock %}

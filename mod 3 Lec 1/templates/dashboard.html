@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Dashboard</h2>
+    <p>Bienvenido de nuevo, <strong>{{ current_user.username }}</strong>!</p>
+    <p>Esta es una página protegida. Solo puedes ver esto si has iniciado sesión.</p>
+    <p>Tu rol es: <strong>{{ current_user.role }}</strong>.</p>
+    <p>Puedes navegar a tu <a href="{{ url_for('profile') }}">perfil</a> o <a href="{{ url_for('logout') }}">cerrar sesión</a>.</p>
+{% endblock %}

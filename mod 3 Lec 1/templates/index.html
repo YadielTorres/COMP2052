@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Bienvenido a la Aplicación</h1>
+        <p class="lead">Esta es la página de inicio pública. Todos pueden ver esto.</p>
+        <hr class="my-4">
+        {% if current_user.is_authenticated %}
+            <p>Actualmente has iniciado sesión como <strong>{{ current_user.username }}</strong>.</p>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('dashboard') }}" role="button">Ir al Dashboard</a>
+        {% else %}
+            <p><a href="{{ url_for('login') }}">Inicia sesión</a> o <a href="{{ url_for('register') }}">regístrate</a> para acceder al contenido protegido.</p>
+        {% endif %}
+    </div>
+{% endblock %}
